@@ -23,6 +23,14 @@ comments: true
 
     然后公司大佬就给出建议使用jenkins来搭建前端的CI。
 
+## 我这里构建前端CI的思路
+    
+    push至CI监听的git分支 -> CI polling -> git clone -> build tag -> tag传输至测试服务器 -> 远程调用测试服务器部署脚本
+
+    这里由于CI服务器与测试服务器之间可以内网传输，所以直接使用SCP进行文件传输。
+
+    下面需要一定shell的基础（没有也没关系，可以度娘或google一点点写出来）。
+
 ## 下面进入正题
 
 ### 安装/启动jenkins
@@ -55,12 +63,30 @@ comments: true
     
     填写要构建CI的项目名称，选择构建一个"自由风格的软件项目"，点击"OK"创建项目。
 
+![](/assets/img/jenkins/jenkins-2.png)
+
     进入项目的配置页面，下面介绍以git为代码管理仓库的配置。
     
     "源码管理"模块，选择"Git"。"Repository URL"填写项目的git的地址（https类型的），"Credentials"配置你的git账号信息（开始需要添加一个，填写你的git账号、密码）。"Branch Specifier"填写你需要polling的分支。
 
+![](/assets/img/jenkins/jenkins-3.png)
+
     "构建触发器"模块勾选"GitHub hook trigger for GITScm polling"（启用轮询方式监听）、"Poll SCM",下方日程表我这里使用的是"*/3 * * * *"，表示3分钟轮询一次，具体可查询Poll SCM语法。
 
+![](/assets/img/jenkins/jenkins-4.png)
+
     然后下面需要填写打包上传的shell脚本命令，"构建" -> "Execute shell"。
+
+![](/assets/img/jenkins/jenkins-5.png)
+
+    构建后的操作我这里新增了一个构建失败发送构建失败邮件，这里需要配置邮件服务（由于这里工作不是由我来做的，所以不做赘述。有兴趣的同学可以自行搜索）。
+
+![](/assets/img/jenkins/jenkins-6.png)
+
+## 结尾
+
+通过这次的Jenkins的CI搭建还是学习到了不少新的姿势，其实这只能算是一个简易的CI配置，可优化处还有很多。比如可以使用git hooks，不过在搭建CI服务器之后日常的工作效率确实有了不少的提高。
+
+这篇文章只是对Jenkins搭建前端CI的一个基础的讲解，如果对CI本身不是很了解的话，可以参考[阮一峰大神的介绍](http://www.ruanyifeng.com/blog/2015/09/continuous-integration.html)。
 
 
