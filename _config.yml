@@ -1,7 +1,7 @@
 # Site
 title:              nines's blog
 bio:                '一个前端的自我修养.'
-description:        "Moon is a minimal, one column jekyll theme for your blog."
+description:        "一个前端的成长."
 reading_time:       true
 words_per_minute:   200
 logo:               'assets/img/logo.png'
@@ -62,15 +62,6 @@ steam:              username
 #xmpp:              username@server.com
 #hackernews:        username
 
-# Gems
-gems:
-  - jekyll-mentions
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-gist
-
-jekyll-mentions:
-    base_url: https://github.com
 
 # Exclude list
 exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile]
