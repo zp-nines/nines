@@ -43,12 +43,14 @@ comments: true
     // ...
     // ...
     ```
+
 ### jenkins配置
     一开始进入jenkin的操作页面会让你注册用户，并需要你访问本机一个文件，将其中的密钥复制出来并粘贴至页面中。
     
     下面越过上述部分，假设已经注册完用户并登录成功。
 
     点击页面左侧新建按钮，跳转至新建页面。
-    ![](/assets/img/jenkins/jenkins-1.png)
+    
+    ![](/assets/img/jenkins/jenkins-1.pngjenkins-1.png)
 
 
