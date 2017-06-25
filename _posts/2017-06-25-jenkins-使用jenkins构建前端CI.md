@@ -39,7 +39,7 @@ comments: true
     // 启动jenkins，配置jenkins的操作页面端口。
     java -jar jenkins.war --httpPort=10086
 
-    // 然后访问http://localhost:10080
+    // 然后访问http://localhost:10086
     // ...
     // ...
     ```
@@ -51,6 +51,10 @@ comments: true
 
     点击页面左侧新建按钮，跳转至新建页面。
     
-    ![](/assets/img/jenkins/jenkins-1.pngjenkins-1.png)
+![](/assets/img/jenkins/jenkins-1.pngjenkins-1.png)
+    
+    填写要构建CI的项目名称，选择构建一个"自由风格的软件项目"，点击"OK"创建项目。
 
+    进入项目的配置页面，下面介绍以git为代码管理仓库的配置。
+    找到"源码管理"模块，选择"Git"。"Repository URL"填写项目的git的地址（https类型的），"Credentials"配置你的git账号信息（开始需要添加一个，填写你的git账号、密码）。
 
