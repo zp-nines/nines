@@ -240,7 +240,8 @@ button {
 
   font-style: normal;
   font-size: 28px;
-  font-family: Arial, Baskerville, monospace;
+  // font-family: Arial, Baskerville, monospace;
+  font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Segoe UI", "Microsoft Yahei", Tahoma, Arial, STHeiti, sans-serif;
 
   &:hover,
   &:focus {
