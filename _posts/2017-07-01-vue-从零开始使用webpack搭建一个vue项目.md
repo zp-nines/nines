@@ -91,4 +91,4 @@ webpack需要node环境支持
     
 ## 结尾
 好了，到这里一个简单的vue项目就可以正式开始使用了。
-下一章会介绍如何使用webpack-dev-server构建一个本地web服务器，以及mock使用的方式。
+下一章会介绍如何使用webpack-dev-server构建一个本地web服务器。
